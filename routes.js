@@ -12,7 +12,6 @@ var dbConfig = {
 };
 
 // additional control and query functions
-var controller = require('./controllers/controller');
 
 // send 404 response:
 function send404Response(res){
