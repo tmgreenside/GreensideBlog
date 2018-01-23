@@ -22,6 +22,13 @@ module.exports = function(app) {
 	
     app.use('/static', express.static('./static'));
     app.get('/', function (req, res) {
-        res.render('home.html', {results: null, attrs: [] });
+        res.render('home.html');
+    });
+
+    app.get('/blog', function (req, res) {
+        res.render('blog.html');
+    });
+    app.post('/blog', function (req, res) {
+        res.send("You blogged. Congratulations. Now replace this with an actual webpage.");
     });
 }

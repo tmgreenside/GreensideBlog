@@ -1,0 +1,23 @@
+html {
+	position: relative;
+	background-color: blue
+}
+
+.main_body {
+	position: absolute;
+	background-color: white;
+	max-width: 800px;
+	margin-left: 230px;
+}
+
+.sidebar {
+	position: absolute;
+	background-color: green;
+	width: 200px;
+}
+
+#top_image {
+	background-color: black;
+	height: 200px;
+	width: 100%;
+}

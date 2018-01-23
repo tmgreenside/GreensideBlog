@@ -5,11 +5,13 @@ var url = require('url');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
+var path = require('path');
 
 var app = express();
 app.engine('.html', require('ejs').__express);
 app.set('views',__dirname + '/views');
 app.set('view engine','html');
+app.use(express.static(path.join(__dirname, 'static')));
  
 app.use(session({
     secret: 'SECRET',
