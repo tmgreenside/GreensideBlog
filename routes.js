@@ -1,17 +1,7 @@
 var crypto = require('crypto');
 var express = require('express');
-var sql = require('mysql');
 
-var dbConfig = {
-    server:'localhost',
-    database:'tgreenside_DB',
-    user:'trevapp',
-    password:'bowers321',
-    port:3306,
-    multipleStatements: false // prevent certain types of SQL injection
-};
-
-// additional control and query functions
+var blog = require('./controllers/blog');
 
 // send 404 response:
 function send404Response(res){
@@ -28,7 +18,7 @@ module.exports = function(app) {
     app.get('/blog', function (req, res) {
         res.render('blog.html');
     });
-    app.post('/blog', function (req, res) {
-        res.send("You blogged. Congratulations. Now replace this with an actual webpage.");
-    });
+    app.post('/blog', blog.blogPost);
+
 }
+
