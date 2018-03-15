@@ -15,9 +15,7 @@ module.exports = function(app) {
         res.render('home.html');
     });
 
-    app.get('/blog', function (req, res) {
-        res.render('blog.html');
-    });
+    app.get('/blog', blog.loadBlog);
     app.post('/blog', blog.blogPost);
 
 }
