@@ -40,10 +40,17 @@ exports.saveAcct = function(req, res) {
 
 	if (req.body.userpass != req.body.userpass2) {
 		res.redirect('/error');
-	} else if (req.body.username == "") res.redirect('/error');
+		return;
+	} else if (req.body.username == "") {
+		res.redirect('/error');
+		return;
+	}
 	
 	con.query("SELECT * FROM BloggerKeys WHERE acctKey = '" + req.body.acctKey + "'", function(err, result) {
-		if(err || result.length == 0) res.redirect('/error');
+		if(err || result.length == 0) {
+			res.redirect('/error');
+			return;
+		}
 	});
 
 	insertQuery = "INSERT INTO Accounts (username, password, acctKey) VALUES (";
