@@ -11,12 +11,24 @@ function send404Response(res){
 module.exports = function(app) {
 	
     app.use('/static', express.static('./static'));
+
     app.get('/', function (req, res) {
         res.render('home.html');
+    });
+
+    app.get('/about', function (req, res) {
+        res.render('about.html');
+    });
+
+    app.get('/resume', function (req, res) {
+        res.render('resume.html');
     });
 
     app.get('/blog', blog.loadBlog);
     app.post('/blog', blog.blogPost);
 
+    app.get('/*', function (req, res) {
+        res.render('error.html');
+    });
 }
 
