@@ -1,42 +1,42 @@
 <DOCTYPE html>
 
-<html>
-	<head>
-		<link type="text/css" rel="stylesheet" href="/layout1.css" />
-		<title>Trevor Greenside | Blog</title>
-	</head>
-	<body>
-		<!-- previous posts retreived from database and posted here -->
-		<div id="top_image">
-		</div>
-		<div id="main_page">
-			<div class="sidebar">
-				<ul>
-					<li><a href="/about">About Me</a></li>
-					<li><a href="/resume">Resume</a></li>
-					<li>Blog</li>
-				</ul>
-			</div>	
-			<div class="main_body">
-				<h3>Greenside Blog</h3>
-				<p>Note: To post here, you must have a valid username or password. You can enter your login credentials 
-					when you post. Or, if you have been given a valid key, you may create an account <a href='/blog/createAcct'>here</a>.</p>
-				<% for (var post in results) { %>
-					<div class="post">
-						<p><%= results[post].postContent %></p>
-						<p><%= results[post].postDate %></p>
-					</div>
-				<% } %>
-				<br><h5>Post Here</h5>
-				<!-- area to write and submit a new post -->
-				<form method="post">
-					<textarea name="blogger"></textarea><br>
-					Username: <input type="text" name="username"><br>
-					Password: <input type="password" name="userpass"><br>
+    <html>
+        <head>
+            <link type="text/css" rel="stylesheet" href="/layout1.css" />
+            <title>Trevor Greenside | Blog</title>
+        </head>
+        <body>
+            <!-- previous posts retreived from database and posted here -->
+            <div id="top_image">
+            </div>
+            <div id="main_page">
+                <div class="sidebar">
+                    <ul>
+                        <li><a href="/about">About Me</a></li>
+                        <li><a href="/resume">Resume</a></li>
+                        <li>Blog</li>
+                    </ul>
+                </div>	
+                <div class="main_body">
+                    <h3>Greenside Blog</h3>
+                    <p>Note: To post here, you must have a valid username or password. You can enter your login credentials 
+                        when you post. Or, if you have been given a valid key, you may create an account <a href='/blog/createAcct'>here</a>.</p>
+                    <% for (var post in results) { %>
+                    <div class="post">
+                        <p><%= results[post].postContent %></p>
+                        <p><%= results[post].postDate %></p>
+                    </div>
+                    <% } %>
+                    <br><h5>Post Here</h5>
+                    <!-- area to write and submit a new post -->
+                    <form method="post">
+                        <textarea name="blogger"></textarea><br>
+                        Username: <input type="text" name="username"><br>
+                        Password: <input type="password" name="userpass"><br>
 
-					<input type="submit" method="post">
-				</form>
-			</div>
-		</div>
-	</body>
-</html>
+                        <input type="submit" method="post">
+                    </form>
+                </div>
+            </div>
+        </body>
+    </html>

@@ -4,12 +4,12 @@ var express = require('express');
 var blog = require('./controllers/blog');
 
 // send 404 response:
-function send404Response(res){
+function send404Response(res) {
     res.render('error.html');
 };
 
-module.exports = function(app) {
-	
+module.exports = function (app) {
+
     app.use('/static', express.static('./static'));
 
     app.get('/', function (req, res) {
@@ -33,5 +33,5 @@ module.exports = function(app) {
     app.get('/*', function (req, res) {
         res.render('error.html');
     });
-}
+};
 
