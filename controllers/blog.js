@@ -21,8 +21,8 @@ exports.blogPost = function (req, res) {
         if (err || result.length === 0)
             res.redirect('/error');
         else {
-            testquery = "INSERT INTO Posts (postContent, postDate) VALUES ('" + req.body.blogger + "', NOW())";
-            con.query(testquery, function (err, result) {
+            testquery = "INSERT INTO Posts (postContent, postDate, postUsername) VALUES (?, NOW(), ?)";
+            con.query(testquery, [req.body.blogger, username], function (err, result) {
                 res.redirect('/blog');
             });
         }
