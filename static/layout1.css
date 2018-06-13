@@ -1,6 +1,20 @@
 html {
     position: relative;
-    background-color: blue
+    background-image: url("/static/pics/yosemite.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: auto;
+    left: 0;
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    top: 0;
+    width: auto
+}
+
+body {
+    
 }
 
 .main_body {
@@ -35,7 +49,6 @@ textarea {
 }
 
 #top_image {
-    background-color: black;
     height: 200px;
     width: 100%;
 }
